@@ -202,6 +202,11 @@ description = "Start the jank REPL (debug)"
 depends-on = ["build"]
 inputs = ["compiler+runtime/stamps/debug/build.stamp"]
 
+# Check which git submodules are available as nixpkgs packages.
+[tasks.check-nixpkgs]
+cmd = "nu bin/check-nixpkgs.nu"
+description = "Report nixpkgs availability for each git submodule"
+
 # Verify that git GPG commit signing is configured correctly.
 [tasks.verify-gpg]
 cmd = "nu bin/verify-git-gpg.nu"
